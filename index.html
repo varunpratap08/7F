@@ -30,6 +30,137 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 	<!-- Custom Responsive CSS -->
 	<link rel="stylesheet" href="assets/css/responsive.css">
+	
+	<!-- Schema.org markup for Google -->
+	<script type="application/ld+json">
+	{
+	  "@context": "https://schema.org",
+	  "@graph": [
+	    {
+	      "@type": "Organization",
+	      "@id": "https://7fdesign.com/#organization",
+	      "name": "7F Design",
+	      "url": "https://7fdesign.com/",
+	      "logo": {
+	        "@type": "ImageObject",
+	        "url": "https://7fdesign.com/assets/images/logo.jpg"
+	      },
+	      "sameAs": [
+	        "https://www.facebook.com/7fdesignstudio/",
+	        "https://www.instagram.com/7fdesignstudio/"
+	      ],
+	      "contactPoint": [
+	        {
+	          "@type": "ContactPoint",
+	          "telephone": "+91-9999999999",
+	          "contactType": "customer service",
+	          "areaServed": "IN",
+	          "availableLanguage": ["English", "Hindi"]
+	        }
+	      ]
+	    },
+	    {
+	      "@type": "WebSite",
+	      "@id": "https://7fdesign.com/#website",
+	      "url": "https://7fdesign.com/",
+	      "name": "7F Design - Architectural & Interior Design Services",
+	      "description": "Leading architectural and interior design firm in Delhi NCR offering commercial and residential design services.",
+	      "publisher": {
+	        "@id": "https://7fdesign.com/#organization"
+	      },
+	      "potentialAction": {
+	        "@type": "SearchAction",
+	        "target": "https://7fdesign.com/?s={search_term_string}",
+	        "query-input": "required name=search_term_string"
+	      }
+	    },
+	    {
+	      "@type": "LocalBusiness",
+	      "parentOrganization": {
+	        "@id": "https://7fdesign.com/#organization"
+	      },
+	      "name": "7F Design",
+	      "image": "https://7fdesign.com/assets/images/logo.jpg",
+	      "@id": "https://7fdesign.com/#local-business",
+	      "url": "https://7fdesign.com/",
+	      "telephone": "+91-9999999999",
+	      "address": {
+	        "@type": "PostalAddress",
+	        "streetAddress": "[Your Office Address]",
+	        "addressLocality": "Delhi",
+	        "postalCode": "1100XX",
+	        "addressCountry": "IN"
+	      },
+	      "geo": {
+	        "@type": "GeoCoordinates",
+	        "latitude": 28.6139,
+	        "longitude": 77.2090
+	      },
+	      "openingHoursSpecification": {
+	        "@type": "OpeningHoursSpecification",
+	        "dayOfWeek": [
+	          "Monday",
+	          "Tuesday",
+	          "Wednesday",
+	          "Thursday",
+	          "Friday",
+	          "Saturday"
+	        ],
+	        "opens": "09:00",
+	        "closes": "18:00"
+	      },
+	      "priceRange": "$$",
+	      "sameAs": [
+	        "https://www.facebook.com/7fdesignstudio/",
+	        "https://www.instagram.com/7fdesignstudio/"
+	      ]
+	    },
+	    {
+	      "@type": "BreadcrumbList",
+	      "@id": "https://7fdesign.com/#breadcrumb",
+	      "itemListElement": [
+	        {
+	          "@type": "ListItem",
+	          "position": 1,
+	          "item": {
+	            "@id": "https://7fdesign.com/",
+	            "name": "Home"
+	          }
+	        }
+	      ]
+	    },
+	    {
+	      "@type": "FAQPage",
+	      "mainEntity": [
+	        {
+	          "@type": "Question",
+	          "name": "What services does 7F Design offer?",
+	          "acceptedAnswer": {
+	            "@type": "Answer",
+	            "text": "7F Design offers comprehensive architectural and interior design services including commercial and residential design, space planning, interior decoration, and project management."
+	          }
+	        },
+	        {
+	          "@type": "Question",
+	          "name": "Where is 7F Design located?",
+	          "acceptedAnswer": {
+	            "@type": "Answer",
+	            "text": "Our office is located in Delhi, serving clients across NCR and beyond."
+	          }
+	        },
+	        {
+	          "@type": "Question",
+	          "name": "How can I schedule a consultation?",
+	          "acceptedAnswer": {
+	            "@type": "Answer",
+	            "text": "You can schedule a consultation by calling us at +91-9999999999 or by filling out the contact form on our website."
+	          }
+	        }
+	      ]
+	    }
+	  ]
+	}
+	</script>
 
 	<!-- Customise-Theme -->
 	<!-- <link rel="stylesheet" href="assets/css/theme.css"> -->
@@ -266,7 +397,7 @@
 									<img src="assets/images/logo.jpg" style="width: 80px;" alt="7F Design Logo">
 								</span>
 							</span>
-							<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+							<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">click Me</button>
 						</div>
 						<div class="offcanvas-body p-0">
 							<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
