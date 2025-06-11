@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#253b2f">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore our latest blog posts on architecture, interior design trends, and innovative design solutions by 7F Design, Delhi's premier design firm.">
+    <meta property="og:title" content="Architecture & Interior Design Blog - 7F Design" />
+    <meta property="og:description" content="Explore our latest blog posts on architecture, interior design trends, and innovative design solutions by 7F Design, Delhi's premier design firm." />
+    <title>Architecture & Interior Design Blog - 7F Design</title>
+    <link rel="shortcut icon" type="images/png" href="assets/images/fav-icon/favicon.ico">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/odometer.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Ensure header is always visible */
+        header.section-header {
+            position: relative !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+            z-index: 1000 !important;
+            background: #fff !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Reset any transforms or transitions that might be hiding the header */
+        .sticky-navbar {
+            transition: none !important;
+            transform: none !important;
+        }
+        
+        /* Preloader styles */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        .preloader img {
+            max-width: 150px;
+            height: auto;
+        }
+        
+        /* Blog specific styles */
+        .blog-section {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+            opacity: 1 !important; /* Ensure blog section is visible */
+            visibility: visible !important; /* Ensure blog section is visible */
+        }
+        
+        .blog-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .blog-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-date {
+            color: #7f7f7f;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .blog-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #253b2f;
+        }
+        
+        .blog-excerpt {
+            color: #666;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .read-more {
+            color: #253b2f;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: #4a6b5f;
+        }
+        
+        .read-more i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+        
+        .section-title h2 {
+            color: #253b2f;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #7f7f7f;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        
+        @media (max-width: 767px) {
+            .blog-section {
+                padding: 60px 0;
+            }
+            
+            .blog-card {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="preloader">
+            <img src="assets/images/logo.jpg" alt="7F Design Logo">
+        </div>
+
+        <div class="w-100 h-100 position-fixed top-0 start-0 page-lines">
+            <div class="container position-relative h-100">
+                <span class="page-line-start position-absolute h-100"></span>
+                <span class="page-line-end position-absolute h-100"></span>
+                <span class="page-line-inner position-absolute h-100 d-none d-xl-block"></span>
+            </div>
+        </div>
+
+        <!-- Header Section -->
+        <header class="section-header header-1 architronix-nav sticky-navbar header-bg-1 header-tra-dark" style="opacity: 1 !important; visibility: visible !important; position: relative !important; top: 0 !important; left: 0 !important; right: 0 !important; z-index: 1000 !important; background: #fff !important;">
+            <div class="header-inner" style="position: relative; z-index: 1001;">
+            <nav class="navbar navbar-expand-xl navbar-light nav-border hover-menu" aria-label="Offcanvas navbar large">
+                <div class="container-fluid max-width">
+                    <div class="d-flex align-items-end">
+                        <a class="navbar-brand py-0" href="index.html">
+                            <span class="logo">
+                                <img src="assets/images/logo.jpg" style="width: 80px;" alt="7F Design Logo">
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <a href="javascript:void(0)" class="toggler-icon text-decoration-none d-block d-xl-none" data-bs-toggle="offcanvas" data-bs-target="#architronixNavbar" aria-controls="architronixNavbar" aria-label="Toggle navigation">
+                        <svg width="40" height="23" viewBox="0 0 40 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="1.5" y1="1.5" x2="38.5" y2="1.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="1.5" y1="11.5" x2="38.5" y2="11.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="21.5" y1="21.5" x2="38.5" y2="21.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+                        </svg> 
+                    </a>
+                    
+                    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="architronixNavbar" aria-labelledby="architronixNavbarLabel">
+                        <div class="offcanvas-header">
+                            <a class="navbar-brand py-0" href="index.html">
+                                <span class="logo">
+                                    <img src="assets/images/logo.jpg" style="width: 80px;" alt="7F Design Logo">
+                                </span>
+                            </a>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about-us.html">About Us</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link d-flex gap-2 align-items-center" href="#" aria-label="nav-links" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Projects
+                                        <span class="dropdown-icon">
+                                            <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11 8L6 2L1 8"/>
+                                            </svg> 
+                                        </span> 
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="commercial-projects.html" aria-label="single-pages"><span class="link-hover-animation-1">Commercial Projects</span></a></li>
+                                        <li><a class="dropdown-item" href="residential-projects.html" aria-label="single-pages"><span class="link-hover-animation-1">Residential Projects</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown has-megamenu">
+                                    <a class="nav-link d-flex gap-2 align-items-center" href="services.html" aria-label="nav-links" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Services
+                                        <span class="dropdown-icon">
+                                            <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11 8L6 2L1 8"/>
+                                            </svg> 
+                                        </span> 
+                                    </a>
+                                    <div class="dropdown-menu megamenu mb-3 mb-xl-0" role="menu">
+                                        <div class="container">
+                                            <div class="megamenu-contents">
+                                                <div class="row g-0">
+                                                    <div class="col-xl-3">
+                                                        <div class="d-flex gap-30 flex-column py-40 ps-30 pe-40">
+                                                            <div class="menu-description">
+                                                                <a href="architectural-design.html" class="menu-heading text-decoration-none link-hover-animation-1 pb-1">Architectural Design</a>
+                                                                <p class="small mb-0 pt-10">Everything from concept to completion</p>
+                                                            </div>
+                                                            <div class="menu-description">
+                                                                <a href="interior-design.html" class="menu-heading text-decoration-none link-hover-animation-1 pb-1">Interior Design</a>
+                                                                <p class="small mb-0 pt-10">Focuses on optimizing functionality and aesthetics</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <div class="d-flex gap-30 flex-column py-40 ps-30 pe-40 separator h-100">
+                                                            <div class="menu-description">
+                                                                <a href="master-planning.html" class="menu-heading text-decoration-none link-hover-animation-1 pb-1">Master Planning</a>
+                                                                <p class="small mb-0 pt-10">Maximize the potential of your space</p>
+                                                            </div>
+                                                            <div class="menu-description">
+                                                                <a href="home-and-office-renovation.html" class="menu-heading text-decoration-none link-hover-animation-1 pb-1">Retrofitings</a>
+                                                                <p class="small mb-0 pt-10">Renovation and remodeling services that breathe new life</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <div class="d-flex gap-30 flex-column py-40 ps-30 pe-40 separator h-100">
+                                                            <div class="menu-description">
+                                                                <a href="color-consultation.html" class="menu-heading text-decoration-none link-hover-animation-1 pb-1">Colour Consultations</a>
+                                                                <p class="small mb-0 pt-10">Develop a design concept</p>
+                                                            </div>
+                                                            <div class="menu-description">
+                                                                <a href="custom-furnishing.html" class="menu-heading text-decoration-none link-hover-animation-1 pb-1">Custom Furnishings</a>
+                                                                <p class="small mb-0 pt-10">Renovation and remodeling services that breathe new life</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 d-none d-xl-block position-relative">
+                                                        <div class="menu-image-wrapper position-relative h-100">
+                                                            <img src="assets/images/menu-image-1.png" class="w-100 h-100" alt="img">
+                                                            <div class="menu-image-contents px-3">
+                                                                <h4 class="mb-90 px-0 px-xl-10 fw-extra-bold">Embark on a Design Journey with Us</h4>
+                                                                <div class="architronix-button">
+                                                                    <a href="#" class="btn btn-secondary d-inline-flex gap-10 w-100" target="_blank">Lets Talk							
+                                                                        <svg width="35" height="22" viewBox="0 0 35 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M24 0.585815L34.4142 10.9999L24 21.4142L22.5858 20L30.5857 12L0 12L2.38419e-07 10L30.5858 10L22.5858 2.00003L24 0.585815Z"/>
+                                                                        </svg>							
+                                                                    </a>
+                                                                </div>
+                                                            </div>												
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="blogs.html">Blogs</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact-us.html">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            </div>
+        </header>
+        <!-- End Header Section -->
+
+        <!-- Blog Section -->
+        <section class="blog-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center section-title">
+                        <span class="subtitle">Latest Articles</span>
+                        <h2>Our Design Insights</h2>
+                        <p>Discover the latest trends, tips, and inspiration in architecture and interior design from our team of experts.</p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <!-- Blog Card 1 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-card">
+                            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Modern Living Room Design" class="blog-image">
+                            <div class="blog-content">
+                                <span class="blog-date">June 15, 2023</span>
+                                <h3 class="blog-title">10 Modern Living Room Design Ideas for 2023</h3>
+                                <p class="blog-excerpt">Discover the latest trends in modern living room design that combine functionality with aesthetic appeal for the contemporary home.</p>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Card 2 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-card">
+                            <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Sustainable Architecture" class="blog-image">
+                            <div class="blog-content">
+                                <span class="blog-date">May 28, 2023</span>
+                                <h3 class="blog-title">Sustainable Architecture: Building for the Future</h3>
+                                <p class="blog-excerpt">Explore how sustainable architecture is shaping the future of construction with eco-friendly materials and energy-efficient designs.</p>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Card 3 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-card">
+                            <img src="https://images.unsplash.com/photo-1583847268964-28d60db04364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Small Space Solutions" class="blog-image">
+                            <div class="blog-content">
+                                <span class="blog-date">April 12, 2023</span>
+                                <h3 class="blog-title">Maximizing Small Spaces: Clever Design Solutions</h3>
+                                <p class="blog-excerpt">Learn innovative design strategies to make the most of small living spaces without compromising on style or functionality.</p>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Load More Button -->
+                <div class="row mt-5">
+                    <div class="col-12 text-center">
+                        <a href="#" class="btn btn-primary">Load More Articles</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Blog Section -->
+
+        <!-- Footer Section -->
+        <footer class="section-footer section-full-width position-relative" style="background-color: black;">
+            <div class="container">
+                <div class="footer-contents">
+                    <div class="row gy-5 gy-lg-0 align-items-center justify-content-between">
+                        <div class="col-lg-4">
+                            <div class="footer-logo">
+                                <a href="index.html">
+                                    <img src="assets/images/logo.jpg" alt="7F Design Logo" style="width: 100px;">
+                                </a>
+                            </div>
+                            <p class="text-white mt-3">Creating inspiring spaces that blend form and function with innovative design solutions.</p>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                            <ul class="footer-links list-unstyled mb-0">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="master-planning.html">Master Planning</a></li>
+                                <li><a href="commercial-projects.html">Commercial Projects</a></li>
+                                <li><a href="blogs.html">Blogs</a></li>
+                                <li><a href="contact-us.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="contact-info text-lg-end">
+                                <h5 class="text-white mb-3">Contact Us</h5>
+                                <p class="mb-2"><i class="fas fa-phone-alt me-2"></i> +91 98765 43210</p>
+                                <p class="mb-2"><i class="fas fa-envelope me-2"></i> info@7fdesign.com</p>
+                                <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i> Delhi NCR, India</p>
+                                <div class="social-links mt-3">
+                                    <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="me-2"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" class="me-2"><i class="fab fa-pinterest-p"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom mt-5 pt-4 border-top border-secondary">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="mb-0 text-white-50">&copy; 2023 7F Design. All Rights Reserved.</p>
+                            </div>
+                            <div class="col-md-6 text-md-end">
+                                <p class="mb-0 text-white-50">Designed with <i class="fas fa-heart text-danger"></i> by 7F Design Team</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer Section -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="assets/js/jquery-3.7.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/odometer.min.js"></script>
+    <script src="assets/js/viewport.jquery.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/ScrollSmoother.min.js"></script>
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Update dynamic year in footer
+        document.querySelector('.dynamic-year').textContent = new Date().getFullYear();
+    </script>
+    
+    <script>
+        // Debug header visibility
+        console.log('Script loaded - checking header visibility');
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('header');
+            console.log('Header element:', header);
+            console.log('Header computed style:', window.getComputedStyle(header));
+            
+            // Force header to be visible
+            if (header) {
+                header.style.opacity = '1';
+                header.style.visibility = 'visible';
+                header.style.position = 'relative';
+                header.style.zIndex = '1000';
+                console.log('Header visibility forced');
+            }
+        });
+
+        // Initialize Lenis for smooth scrolling
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            smoothTouch: false,
+            touchMultiplier: 2,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        
+        // Hide preloader when page is loaded
+        window.addEventListener('load', function() {
+            console.log('Window load event fired');
+            const preloader = document.querySelector('.preloader');
+            if (preloader) {
+                preloader.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                console.log('Preloader hidden');
+            }
+            
+            // Additional check for header visibility
+            const header = document.querySelector('header');
+            if (header) {
+                header.style.display = 'block';
+                header.style.opacity = '1';
+                header.style.visibility = 'visible';
+                console.log('Header visibility confirmed on load');
+            }
+        });
+        
+        // Fallback in case load event doesn't fire
+        setTimeout(function() {
+            const preloader = document.querySelector('.preloader');
+            if (preloader && preloader.style.display !== 'none') {
+                preloader.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }, 2000);
+
+        requestAnimationFrame(raf);
+        
+        // Add active class to current page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Initialize dropdown hover functionality
+            const dropdowns = document.querySelectorAll('.dropdown, .has-megamenu');
+            
+            dropdowns.forEach(function(dropdown) {
+                // Show dropdown on hover
+                dropdown.addEventListener('mouseenter', function() {
+                    const toggle = this.querySelector('[data-bs-toggle="dropdown"]');
+                    if (toggle) {
+                        const dropdownMenu = this.querySelector('.dropdown-menu');
+                        if (dropdownMenu) {
+                            dropdownMenu.classList.add('show');
+                            toggle.setAttribute('aria-expanded', 'true');
+                        }
+                    }
+                });
+                
+                // Hide dropdown when mouse leaves
+                dropdown.addEventListener('mouseleave', function() {
+                    const toggle = this.querySelector('[data-bs-toggle="dropdown"]');
+                    if (toggle) {
+                        const dropdownMenu = this.querySelector('.dropdown-menu');
+                        if (dropdownMenu) {
+                            dropdownMenu.classList.remove('show');
+                            toggle.setAttribute('aria-expanded', 'false');
+                        }
+                    }
+                });
+            });
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.matches('.dropdown-toggle') && !e.target.closest('.dropdown-menu')) {
+                    const openDropdowns = document.querySelectorAll('.dropdown-menu.show');
+                    openDropdowns.forEach(function(dropdown) {
+                        dropdown.classList.remove('show');
+                        const toggle = dropdown.previousElementSibling;
+                        if (toggle && toggle.matches('.dropdown-toggle')) {
+                            toggle.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

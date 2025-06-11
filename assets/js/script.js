@@ -25,10 +25,30 @@
   });
   // =======Sticky-header========>>>>>
 
+  // Trigger a scroll event on load to handle initial state
+  $(window).trigger('scroll');
 
 
+  // Handle preloader visibility
   $(window).on("load", function () {
-    $(".preloader").delay(600).fadeOut("slow");
+    // Show the preloader with logo
+    $(".preloader").removeClass("hidden");
+    
+    // Hide preloader when user starts scrolling
+    let scrolled = false;
+    $(window).on('scroll', function() {
+      if (!scrolled) {
+        scrolled = true;
+        $(".preloader").addClass("hidden");
+      }
+    });
+    
+    // Also hide preloader after 3 seconds if user doesn't scroll
+    setTimeout(function() {
+      if (!scrolled) {
+        $(".preloader").addClass("hidden");
+      }
+    }, 3000);
   });
 
 

@@ -8445,20 +8445,17 @@ body {
 .header-1 {
   --bs-header-padding-left: 35px;
   --bs-header-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: -200px;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 99;
+  transition: top 0.3s ease-in-out;
+  background-color: #000000;
 }
 .header-1.sticky {
-  position: fixed;
-  z-index: 99;
-  width: 100%;
   top: 0;
-  left: 0;
-  animation: fadeInDown 0.7s ease-in-out 0s 1 normal none running;
-  transition: all 0.3s ease-in-out;
+  animation: fadeInDown 0.3s ease-in-out 0s 1 normal none running;
   box-shadow: var(--bs-header-box-shadow);
 }
 .header-1.sticky .btn {
@@ -8807,22 +8804,178 @@ body {
 }
 .about-contents {
   padding: 70px 0;
-  gap: 40px;
+  gap: 30px;
 }
-.about-contents .about-content-inner .fs-60 {
-  font-size: 60px;
+
+.about-contents .about-content-inner {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
 }
+
 .about-contents .list-item-number {
-  min-width: 116px;
-  max-width: 116px;
+  min-width: 70px;
+  max-width: 100%;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
 }
+
+.about-contents .stroke-heading-2 {
+  display: inline-block;
+  line-height: 1;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.about-contents .text-line-2 {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 0;
+}
+
+.about-contents .text-line-2 text {
+  font-size: 80px;
+  font-weight: 800;
+  opacity: 0.2;
+  transition: all 0.3s ease;
+  dominant-baseline: middle;
+}
+
+.about-contents .about-content-inner:hover .text-line-2 text {
+  opacity: 0.3;
+}
+
+.about-contents h4 {
+  position: relative;
+  z-index: 2;
+  margin-top: -15px;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.about-contents p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
 @media (max-width: 1399.98px) {
   .about-contents {
+    padding: 60px 0;
+  }
+  .about-contents .text-line-2 text {
+    font-size: 70px;
+  }
+  .about-contents h4 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .about-contents .list-item-number {
+    min-width: 60px;
+  }
+  .about-contents .text-line-2 text {
+    font-size: 60px;
+  }
+  .about-contents h4 {
+    font-size: 1.3rem;
+    margin-top: -10px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .about-contents {
     padding: 50px 0;
+    gap: 25px;
   }
   .about-contents .list-item-number {
-    min-width: 105px;
-    max-width: 105px;
+    min-width: 55px;
+  }
+  .about-contents .text-line-2 text {
+    font-size: 50px;
+  }
+  .about-contents h4 {
+    font-size: 1.25rem;
+    margin-top: -8px;
+  }
+  .about-contents p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .about-contents {
+    padding: 40px 0;
+    gap: 20px;
+  }
+  .about-contents .about-content-inner {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  .about-contents .list-item-number {
+    min-width: 45px;
+  }
+  .about-contents .text-line-2 text {
+    font-size: 42px;
+  }
+  .about-contents h4 {
+    font-size: 1.2rem;
+    margin-top: -5px;
+    margin-bottom: 8px;
+  }
+  .about-contents p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 575.98px) {
+  .about-contents {
+    padding: 30px 0;
+    gap: 15px;
+  }
+  .about-contents .about-content-inner {
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+  }
+  .about-contents .list-item-number {
+    min-width: 40px;
+    margin-bottom: 5px;
+  }
+  .about-contents .text-line-2 text {
+    font-size: 36px;
+    opacity: 0.15;
+  }
+  .about-contents h4 {
+    font-size: 1.15rem;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  .about-contents p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .about-contents .list-item-number {
+    min-width: 40px;
+  }
+  .about-contents .text-line-2 text {
+    font-size: 30px;
   }
 }
 @media (max-width: 575.98px) {
@@ -9076,30 +9229,86 @@ body {
 .service-details .stroke-heading {
   --bs-stroke-heading-height: 130px;
   --bs-text-line-top-spacing: 0;
+  margin-bottom: 15px;
+  line-height: 1;
 }
+.service-details .text-line-2 {
+  width: 100%;
+  height: auto;
+}
+.service-details .text-line-2 text {
+  font-size: 130px;
+  font-weight: 800;
+  dominant-baseline: middle;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1399.98px) {
+  .service-details .text-line-2 text {
+    font-size: 110px;
+  }
+}
+
 @media (max-width: 1199.98px) {
   .service-details .stroke-heading {
-    --bs-stroke-heading-height: 122px;
+    --bs-stroke-heading-height: 110px;
+  }
+  .service-details .text-line-2 text {
+    font-size: 100px;
   }
 }
+
 @media (max-width: 991.98px) {
-  .service-details .stroke-heading {
-    --bs-stroke-heading-height: 108px;
-  }
-}
-@media (max-width: 767.98px) {
   .service-details .stroke-heading {
     --bs-stroke-heading-height: 90px;
   }
+  .service-details .text-line-2 text {
+    font-size: 85px;
+  }
 }
+
+@media (max-width: 767.98px) {
+  .service-details .stroke-heading {
+    --bs-stroke-heading-height: 75px;
+  }
+  .service-details .text-line-2 text {
+    font-size: 70px;
+  }
+}
+
 @media (max-width: 575.98px) {
   .service-details .stroke-heading {
-    --bs-stroke-heading-height: 78px;
+    --bs-stroke-heading-height: 60px;
+  }
+  .service-details .text-line-2 text {
+    font-size: 55px;
+  }
+}
+
+/* Ensure proper alignment with the content */
+.service-details h4 {
+  margin-top: -20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 767.98px) {
+  .service-details h4 {
+    margin-top: -15px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .service-details h4 {
+    margin-top: -10px;
   }
 }
 .service-details p {
   display: -webkit-box;
   -webkit-box-orient: vertical;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-details .stroke-heading {
@@ -11154,22 +11363,204 @@ svg {
   }
 }
 .event-counter {
-  --bs-event-padding-top: 120px;
-  padding-top: var(--bs-event-padding-top);
+  --bs-event-padding-top: 100px;
+  --bs-counter-gap: 30px;
+  padding: var(--bs-event-padding-top) 0;
+  background-color: #f9f9f9;
 }
+
+.event-counter .container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.event-counter .row {
+  margin: 0 -15px;
+}
+
+.event-counter [class*="col-"] {
+  padding: 0 15px;
+  margin-bottom: var(--bs-counter-gap);
+}
+
+.event-counter .separator {
+  display: inline-block;
+  line-height: 1;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  letter-spacing: 0;
+}
+
+.event-counter .odometer {
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: var(--bs-primary);
+  line-height: 1;
+  display: inline-block;
+  vertical-align: baseline;
+  position: relative;
+  padding: 0;
+  margin: 0 0.1em 0 0;
+}
+
+.event-counter .odometer-icon {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--bs-primary);
+  line-height: 1;
+  display: inline-block;
+  vertical-align: baseline;
+  position: relative;
+  margin: 0 0 0 0.1em;
+  padding: 0;
+  transform: translateY(0);
+}
+
+.event-counter p {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  line-height: 1.4;
+  padding-left: 5px;
+  white-space: normal;
+}
+
+/* Responsive adjustments */
 @media (max-width: 1399.98px) {
   .event-counter {
-    --bs-event-padding-top: 90px;
+    --bs-event-padding-top: 80px;
+    --bs-counter-gap: 25px;
+  }
+  
+  .event-counter .odometer {
+    font-size: 4rem;
+  }
+  
+  .event-counter .odometer-icon {
+    font-size: 2.25rem;
+  }
+  
+  .event-counter p {
+    font-size: 1.05rem;
   }
 }
+
+@media (max-width: 1199.98px) {
+  .event-counter .odometer {
+    font-size: 3.5rem;
+  }
+  
+  .event-counter .odometer-icon {
+    font-size: 2rem;
+  }
+  
+  .event-counter p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .event-counter {
+    --bs-event-padding-top: 70px;
+    --bs-counter-gap: 20px;
+  }
+  
+  .event-counter .odometer {
+    font-size: 3.25rem;
+  }
+  
+  .event-counter .odometer-icon {
+    font-size: 1.85rem;
+  }
+  
+  .event-counter p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Tablet and below */
 @media (max-width: 767.98px) {
   .event-counter {
-    --bs-event-padding-top: 50px;
+    --bs-event-padding-top: 60px;
+    --bs-counter-gap: 15px;
   }
+  
+  .event-counter .odometer {
+    font-size: 2.75rem;
+  }
+  
+  .event-counter .odometer-icon {
+    font-size: 1.65rem;
+  }
+  
+  .event-counter p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+  .event-counter {
+    --bs-event-padding-top: 50px;
+    --bs-counter-gap: 12px;
+    padding: 40px 0 30px;
+  }
+  
+  .event-counter .row {
+    margin: 0 -8px;
+  }
+  
+  .event-counter [class*="col-"] {
+    padding: 0 8px;
+    margin-bottom: 25px;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  .event-counter .odometer {
+    font-size: 2.5rem;
+  }
+  
+  .event-counter .odometer-icon {
+    font-size: 1.5rem;
+  }
+  
+  .event-counter p {
+    font-size: 0.85rem;
+    padding-left: 3px;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 400px) {
+  .event-counter .odometer {
+    font-size: 2.25rem;
+  }
+  
+  .event-counter .odometer-icon {
+    font-size: 1.35rem;
+  }
+  
+  .event-counter p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Odometer digit styles */
+.odometer-digit {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
 }
 
 .odometer-digit:last-child {
   padding-right: 2.5px;
+}
+
+.odometer-value {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .swiper-custom-progress {
@@ -12047,8 +12438,17 @@ textarea {
 }
 
 .odometer-icon {
+  display: inline-flex;
+  align-items: flex-end;
   position: relative;
-  top: -3px;
+  margin-left: 0.1em;
+  font-weight: 700;
+  color: var(--bs-primary);
+  line-height: 1;
+  font-size: 2.2rem;
+  height: 1em;
+  padding-bottom: 0.15em;
+  transform: translateY(-0.05em);
 }
 
 .alert {
@@ -12151,25 +12551,26 @@ textarea {
   z-index: 9999999;
   background-color: #000;
   transition: all 0.5s ease-in-out;
+  opacity: 1;
+  pointer-events: none;
 }
 
 .preloader img {
-  position: fixed;
-  top: 50;
-  left: 50;
-  height: 200px;
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999999;
-  background-color: #000;
+  max-width: 200px;
+  max-height: 200px;
   transition: all 0.5s ease-in-out;
+  opacity: 1;
 }
 
-.loaded .preloader {
-  visibility: hidden;
+.preloader.hidden {
   opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s 0.5s;
+}
+
+.preloader.hidden img {
+  opacity: 0;
+  transform: scale(0.8);
 }
 
 .section-404 .section-title-wrapper {
