@@ -1,0 +1,91 @@
+@import "../assets/scss/custom";
+
+// scss-docs-start import-stack
+// Configuration
+@import "../assets/bootstrap/scss/functions";
+@import "../assets/bootstrap/scss/variables";
+@import "../assets/bootstrap/scss/variables-dark";
+@import "../assets/bootstrap/scss/maps";
+@import "../assets/bootstrap/scss/mixins";
+@import "../assets/bootstrap/scss/utilities";
+#customizer-form{
+    .number{
+        width: 100px;
+    }
+    .accordion{
+        --bs-accordion-btn-padding-x: 0;
+        --bs-accordion-body-padding-x: 0;
+        --bs-accordion-border-width: 1px;
+        --bs-accordion-border-color: rgba( var(--bs-primary-rgb), .2 );
+        --bs-accordion-btn-bg: transparent;       
+        --bs-accordion-bg: transparent;
+        --bs-accordion-active-bg: transparent;
+        .accordion-button{
+            border: none;
+            padding-top: 0;
+            font-weight: 700;
+            &:after{
+                content: var(--bs-accordion-btn-active-icon);
+            }
+            
+            &.collapsed:after{
+                content: var(--bs-accordion-btn-icon);
+            }
+        }
+    }
+    .accordion-header{
+        border-bottom: var(--bs-accordion-border-width) solid var(--bs-accordion-border-color);
+    }
+    .accordion-body{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: var(--bs-accordion-btn-padding-y);
+    }
+
+    
+
+    textarea{
+        font-size: 10px;
+        min-height: 120px;
+    }
+
+    .cursor-pointer{
+        cursor: pointer;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        background: var(--bg-color, var(--bs-primary));
+        color: #fff;
+        padding: 0 14px;        
+        min-width: 50px;
+        &.rounded{
+            --bs-border-radius: 8px;
+        }
+        &.default{
+            --bg-color: linear-gradient( to right, #d2e0d9 0%,#d2e0d9 50%, #253b2f 50%, #253b2f 100% );              
+        }
+        &.blackwhite{
+            --bg-color: linear-gradient( to right, #fff 0%,#fff 50%, #000 50%, #000 100% );              
+        }
+        &.preset1{
+            --bg-color: linear-gradient( to right, #1B4242 0%, #1B4242 50%, #092635 50%, #092635 100% );              
+        }
+        &.preset2{
+            --bg-color: linear-gradient( to right, #47A992 0%, #47A992 50%, #482121 50%, #482121 100% );              
+        }
+        &.preset3{
+            --bg-color: linear-gradient( to right, #000000 0%, #000000 50%, #FFF1DC 50%, #FFF1DC 100% );              
+        }
+        &.preset4{
+            --bg-color: linear-gradient( to right, #6B4F4F 0%, #6B4F4F 50%, #483434 50%, #483434 100% );              
+        }
+        
+    }
+    .color-presets{            
+        > span{
+            text-indent: -99999px;
+            border: 1px solid #000;
+        }
+    }
+}
