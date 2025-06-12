@@ -251,6 +251,16 @@ html {
   }
 }
 
+@media (max-width: 991.98px) {
+  .carousel-caption h5 {
+    font-size: 2rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 1.1rem;
+  }
+}
+
 @media (max-width: 575.98px) {
   .hero-heading {
     font-size: 1.75rem;
@@ -264,6 +274,26 @@ html {
   
   .carousel-captions {
     padding: 1rem;
+  }
+  
+  .carousel-caption {
+    left: 5%;
+    right: 5%;
+    padding: 0.5rem;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 

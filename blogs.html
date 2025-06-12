@@ -12,18 +12,30 @@
     <link rel="shortcut icon" type="images/png" href="assets/images/fav-icon/favicon.ico">
 
     <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com"&display=swap>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     
     <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/odometer.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="preload" href="assets/css/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/swiper-bundle.min.css" media="print" onload="this.media='all'"></noscript>
+    
+    <link rel="preload" href="assets/css/odometer.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/odometer.css" media="print" onload="this.media='all'"></noscript>
+    
+    <link rel="preload" href="assets/css/animate.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/animate.css" media="print" onload="this.media='all'"></noscript>
+    
+    <link rel="preload" href="assets/css/magnific-popup.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/magnific-popup.css" media="print" onload="this.media='all'"></noscript>
+    
+    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'"></noscript>
+    
+    <link rel="preload" href="assets/css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/responsive.css" media="print" onload="this.media='all'"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" media="print" onload="this.media='all'">
 
     <style>
         /* Ensure header is always visible */
@@ -67,10 +79,14 @@
         
         /* Blog specific styles */
         .blog-section {
-            padding: 100px 0;
+            padding: 40px 0 60px;
             background-color: #f9f9f9;
-            opacity: 1 !important; /* Ensure blog section is visible */
-            visibility: visible !important; /* Ensure blog section is visible */
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .section-title-wrapper {
+            margin-bottom: 30px;
         }
         
         .blog-card {
@@ -165,13 +181,180 @@
             }
         }
     </style>
-</head>
+
+    <style id="critical-css" data-css-optimized="true">
+/* Critical CSS */
+html,body{height:100%;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;color:#212529;}
+.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;}
+@media (min-width:576px){.container{max-width:540px;}}
+@media (min-width:768px){.container{max-width:720px;}}
+@media (min-width:992px){.container{max-width:960px;}}
+@media (min-width:1200px){.container{max-width:1140px;}}
+/* Add more critical styles as needed */
+</style>
+
+    <script>
+    /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+    !function(e){"use strict";var n=function(n,t,o){var i=e.document.createElement("link"),a=t||e.document.getElementsByTagName("script")[0],s=e.document.styleSheets;return i.rel="stylesheet",i.href=n,i.media="only x",a.parentNode.insertBefore(i,a),i.onload=o||function(){},i.onloadcsscalled=function(n){n=!0;try{i.sheet.cssRules.length>0&&(o(),i.onloadcssalled=null)}catch(e){e.message.indexOf("cssRules")>-1?e.code=15:e.code=e.code||e.name||"CSSLoadError"}},i.onloadcssalled(),i};e.loadCSS=n;}(this);
+    </script>
+
+                <script>
+                // Picture element HTML5 shiv
+                document.createElement( "picture" );
+                </script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.3/picturefill.min.js" async defer></script>
+
+        <style>
+            .header-preloader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 80px;
+                background: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+                transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+                transform: translateY(0);
+            }
+            .header-preloader.hide {
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+            }
+            .header-preloader img {
+                max-height: 40px;
+                width: auto;
+            }
+        </style>    
+    <style>
+    /* Critical CSS */
+    :root { --primary-color: #253b2f; --text-color: #333; }
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; color: var(--text-color); }
+    h1, h2, h3, h4, h5, h6 { margin-top: 0; line-height: 1.2; }
+    img { max-width: 100%; height: auto; display: block; }
+    .header-preloader { position: fixed; top: 0; left: 0; width: 100%; height: 80px; background: #fff; z-index: 9999; }
+    /* Add more critical styles as needed */
+    </style>
+    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'"></noscript>
+    
+        
+    <!-- Preconnect to required origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="/assets/css/critical-blogs.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/critical-blogs.css"></noscript>
+    
+    <!-- Preload LCP image -->
+    <link rel="preload" as="image" href="/assets/images/hero-blog.jpg" imagesrcset="/assets/images/hero-blog-320w.jpg 320w, /assets/images/hero-blog-480w.jpg 480w, /assets/images/hero-blog-800w.jpg 800w" imagesizes="(max-width: 480px) 100vw, 800px">
+    
+        
+        <style>/* Critical CSS for Blogs Page */
+:root {
+  --primary-color: #253b2f;
+  --text-color: #333;
+  --white: #ffffff;
+  --light-gray: #f9f9f9;
+  --transition: all 0.3s ease;
+}
+
+/* Critical Layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.5;
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Critical Header */
+.section-header {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+  background: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Critical Blog Content */
+.blog-section {
+  padding: 40px 0 60px;
+  background-color: var(--light-gray);
+}
+
+.blog-card {
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Critical Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Critical Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  line-height: 1.2;
+  color: var(--primary-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+/* Critical Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* Hide non-critical content initially */
+.hidden {
+  display: none;
+}
+</style>
+        <link rel="preload" href="/assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/assets/css/style.css" media="print" onload="this.media='all'"></noscript>
+        
+    </head>
 
 <body>
     <div class="page">
-        <div class="preloader">
-            <img src="assets/images/logo.jpg" alt="7F Design Logo">
-        </div>
+        
+        
 
         <div class="w-100 h-100 position-fixed top-0 start-0 page-lines">
             <div class="container position-relative h-100">
@@ -182,6 +365,10 @@
         </div>
 
         <!-- Header Section -->
+        
+        <div class="header-preloader">
+            <img src="assets/images/logo.jpg" alt="7F Design Logo" loading="eager">
+        </div>
         <header class="section-header header-1 architronix-nav sticky-navbar header-bg-1 header-tra-dark" style="opacity: 1 !important; visibility: visible !important; position: relative !important; top: 0 !important; left: 0 !important; right: 0 !important; z-index: 1000 !important; background: #fff !important;">
             <div class="header-inner" style="position: relative; z-index: 1001;">
             <nav class="navbar navbar-expand-xl navbar-light nav-border hover-menu" aria-label="Offcanvas navbar large">
@@ -189,7 +376,7 @@
                     <div class="d-flex align-items-end">
                         <a class="navbar-brand py-0" href="index.html">
                             <span class="logo">
-                                <img src="assets/images/logo.jpg" style="width: 80px;" alt="7F Design Logo">
+                                <img src="assets/images/logo.jpg" style="width: 80px;" alt="7F Design Logo" src="assets/images/logo.jpg" width="80" height="24" style="width: 80px; height: auto;" alt="7F Design Logo" loading="lazy" style="aspect-ratio: 80/24; width: 100%; height: auto;" onload="this.style.opacity=1" style="opacity:0;transition:opacity 0.3s">
                             </span>
                         </a>
                     </div>
@@ -206,7 +393,7 @@
                         <div class="offcanvas-header">
                             <a class="navbar-brand py-0" href="index.html">
                                 <span class="logo">
-                                    <img src="assets/images/logo.jpg" style="width: 80px;" alt="7F Design Logo">
+                                    <img src="assets/images/logo.jpg" style="width: 80px;" alt="7F Design Logo" src="assets/images/logo.jpg" width="80" height="24" style="width: 80px; height: auto;" alt="7F Design Logo" loading="lazy" style="aspect-ratio: 80/24; width: 100%; height: auto;" onload="this.style.opacity=1" style="opacity:0;transition:opacity 0.3s">
                                 </span>
                             </a>
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -284,7 +471,12 @@
                                                     </div>
                                                     <div class="col-xl-3 d-none d-xl-block position-relative">
                                                         <div class="menu-image-wrapper position-relative h-100">
-                                                            <img src="assets/images/menu-image-1.png" class="w-100 h-100" alt="img">
+                                                            <img  width="800" height="600" loading="lazy" src="assets/images/menu-image-1.png" 
+                sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, (max-width: 768px) 720px, (max-width: 1024px) 960px, (max-width: 1366px) 1280px, (max-width: 1600px) 1440px, 1920px" alt="img" 
+                loading="lazy" decoding="async"
+                data-responsive-optimized="true" class="w-100 h-100" alt="img" width="800" 
+                    height="600" loading="lazy" 
+                    decoding="async" alt="img" style="aspect-ratio: 800/600; width: 100%; height: auto;" onload="this.style.opacity=1" style="opacity:0;transition:opacity 0.3s">
                                                             <div class="menu-image-contents px-3">
                                                                 <h4 class="mb-90 px-0 px-xl-10 fw-extra-bold">Embark on a Design Journey with Us</h4>
                                                                 <div class="architronix-button">
@@ -318,26 +510,48 @@
         <!-- End Header Section -->
 
         <!-- Blog Section -->
-        <section class="blog-section">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center section-title">
-                        <span class="subtitle">Latest Articles</span>
-                        <h2>Our Design Insights</h2>
-                        <p>Discover the latest trends, tips, and inspiration in architecture and interior design from our team of experts.</p>
+        <section class="blog-section" style="padding: 40px 0 60px;">
+            <div class="section-full-width">
+                <div class="section-title-wrapper position-relative">
+                    <div class="scroll-move">
+                        <span class="scrolling-text display-1 fw-extra-bold stroke-title text-stroke stroke-opacity-20 stroke-width-1 stroke-primary lh-1">Blogs</span>
+                    </div>
+
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 text-center section-title">
+                                <span class="subtitle">Latest Articles</span>
+                                <h2>Our Design Insights</h2>
+                                <p>Discover the latest trends, tips, and inspiration in architecture and interior design from our team of experts.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="container">
                 
                 <div class="row">
                     <!-- Blog Card 1 -->
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-card">
-                            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Modern Living Room Design" class="blog-image">
+                            <img  
+                 src="assets/images/blog-image-1.jpg" sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, (max-width: 768px) 720px, (max-width: 1024px) 960px, (max-width: 1366px) 1280px, (max-width: 1600px) 1440px, 1920px" 
+                 
+                alt="Interior Design Example 1" loading="lazy" 
+                decoding="async"
+                data-responsive-optimized="true" width="800" height="600" alt="Interior Design Example 1" loading="lazy" alt="Modern Living Room Design" class="blog-image" width="800" 
+                    height="600" loading="lazy" 
+                    decoding="async" alt="Interior Design Example 1" style="aspect-ratio: 800/600; width: 100%; height: auto;" onload="this.style.opacity=1" style="opacity:0;transition:opacity 0.3s">
                             <div class="blog-content">
                                 <span class="blog-date">June 15, 2023</span>
                                 <h3 class="blog-title">10 Modern Living Room Design Ideas for 2023</h3>
                                 <p class="blog-excerpt">Discover the latest trends in modern living room design that combine functionality with aesthetic appeal for the contemporary home.</p>
-                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                <div class="blog-full-content" style="display: none;">
+                                    <p>Modern living rooms in 2023 are all about creating a harmonious balance between style and comfort. Designers are focusing on sustainable materials, multifunctional furniture, and smart home integration. The color palette has shifted towards earthy tones and natural textures, with an emphasis on biophilic design principles that bring the outdoors in.</p>
+                                    <p>Key elements include statement lighting, curated art pieces, and custom storage solutions that maintain a clean, uncluttered look. The trend is moving away from matchy-matchy furniture sets in favor of eclectic mixes that reflect personal style while maintaining visual cohesion through color and texture.</p>
+                                </div>
+                                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore(this)">Read More <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -345,12 +559,23 @@
                     <!-- Blog Card 2 -->
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-card">
-                            <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Sustainable Architecture" class="blog-image">
+                            <img  
+                 src="assets/images/blog-image-2.jpg" sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, (max-width: 768px) 720px, (max-width: 1024px) 960px, (max-width: 1366px) 1280px, (max-width: 1600px) 1440px, 1920px" 
+                 
+                alt="Interior Design Example 2" loading="lazy" 
+                decoding="async"
+                data-responsive-optimized="true" width="800" height="600" alt="Interior Design Example 2" loading="lazy" alt="Sustainable Architecture" class="blog-image" width="800" 
+                    height="600" loading="lazy" 
+                    decoding="async" alt="Interior Design Example 2" style="aspect-ratio: 800/600; width: 100%; height: auto;" onload="this.style.opacity=1" style="opacity:0;transition:opacity 0.3s">
                             <div class="blog-content">
                                 <span class="blog-date">May 28, 2023</span>
                                 <h3 class="blog-title">Sustainable Architecture: Building for the Future</h3>
                                 <p class="blog-excerpt">Explore how sustainable architecture is shaping the future of construction with eco-friendly materials and energy-efficient designs.</p>
-                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                <div class="blog-full-content" style="display: none;">
+                                    <p>Sustainable architecture is no longer a trend but a necessity in today's construction industry. Architects are increasingly incorporating passive design strategies, renewable energy systems, and locally-sourced materials to minimize environmental impact. The focus is on creating buildings that are not just energy-efficient but also resilient to climate change.</p>
+                                    <p>Innovative materials like cross-laminated timber, recycled steel, and self-healing concrete are revolutionizing the way we build. These materials offer superior performance while significantly reducing the carbon footprint of construction projects. The integration of green roofs, rainwater harvesting systems, and solar panels has become standard practice in modern sustainable design.</p>
+                                </div>
+                                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore(this)">Read More <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -358,12 +583,23 @@
                     <!-- Blog Card 3 -->
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-card">
-                            <img src="https://images.unsplash.com/photo-1583847268964-28d60db04364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Small Space Solutions" class="blog-image">
+                            <img  
+                 src="assets/images/blog-image-3.jpg" sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, (max-width: 768px) 720px, (max-width: 1024px) 960px, (max-width: 1366px) 1280px, (max-width: 1600px) 1440px, 1920px" 
+                 
+                alt="Interior Design Example 3" loading="lazy" 
+                decoding="async"
+                data-responsive-optimized="true" width="800" height="600" alt="Interior Design Example 3" loading="lazy" alt="Small Space Solutions" class="blog-image" width="800" 
+                    height="600" loading="lazy" 
+                    decoding="async" alt="Interior Design Example 3" style="aspect-ratio: 800/600; width: 100%; height: auto;" onload="this.style.opacity=1" style="opacity:0;transition:opacity 0.3s">
                             <div class="blog-content">
                                 <span class="blog-date">April 12, 2023</span>
                                 <h3 class="blog-title">Maximizing Small Spaces: Clever Design Solutions</h3>
                                 <p class="blog-excerpt">Learn innovative design strategies to make the most of small living spaces without compromising on style or functionality.</p>
-                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                <div class="blog-full-content" style="display: none;">
+                                    <p>Small space living requires smart design solutions that maximize every square foot. The key is to think vertically and choose multifunctional furniture that serves multiple purposes. Built-in storage, fold-away furniture, and modular pieces can transform a compact area into a highly functional living space.</p>
+                                    <p>Light colors, strategic lighting, and mirrors can create an illusion of space, while open floor plans and glass partitions maintain visual continuity. The minimalist approach works particularly well in small spaces, where every item should earn its place. Smart home technology can also help reduce clutter by eliminating the need for multiple remote controls and devices.</p>
+                                </div>
+                                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore(this)">Read More <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -381,73 +617,114 @@
 
         <!-- Footer Section -->
         <footer class="section-footer section-full-width position-relative" style="background-color: black;">
-            <div class="container">
-                <div class="footer-contents">
-                    <div class="row gy-5 gy-lg-0 align-items-center justify-content-between">
-                        <div class="col-lg-4">
-                            <div class="footer-logo">
-                                <a href="index.html">
-                                    <img src="assets/images/logo.jpg" alt="7F Design Logo" style="width: 100px;">
-                                </a>
-                            </div>
-                            <p class="text-white mt-3">Creating inspiring spaces that blend form and function with innovative design solutions.</p>
-                        </div>
-                        <div class="col-lg-4 text-center">
-                            <ul class="footer-links list-unstyled mb-0">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="master-planning.html">Master Planning</a></li>
-                                <li><a href="commercial-projects.html">Commercial Projects</a></li>
-                                <li><a href="blogs.html">Blogs</a></li>
-                                <li><a href="contact-us.html">Contact Us</a></li>
+        <div class="container">
+            <div class="footer-contents">
+                <div class="row gy-5 gy-lg-0 align-items-center justify-content-between">
+                    <div class="col-lg-4">
+                        <div>
+                            <a class="navbar-brand py-0" href="https://7fdesign.com/">
+                            <span class="logo">
+                                <img src="assets/images/logo.jpg" style="width: 80px;" alt="" src="assets/images/logo.jpg" width="80" height="24" style="width: 80px; height: auto;" alt="7F Design Logo" loading="lazy" style="aspect-ratio: 80/24; width: 100%; height: auto;" onload="this.style.opacity=1" style="opacity:0;transition:opacity 0.3s">
+                                
+                            </span> 
+                            </a>
+                            <p class="py-10 py-lg-3 mb-0 fw-semibold" style="color: white;"></p>
+                            <ul class="contact-lists list-unstyled mb-0 d-flex">
+                                <li>
+                                    <a href="https://www.facebook.com/share/12AoJNJiKva/?mibextid=qi2Omg" class="link-hover-animation-1 text-decoration-none text-uppercase" aria-label="facebook-link" style="color: white;">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/7f_design/?igsh=MTI3ZGs1eWN4emttNg%3D%3D#" class="link-hover-animation-1 text-decoration-none text-uppercase" aria-label="instagram-link" style="color: white;">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/company/7fdesign/?viewAsMember=true" class="link-hover-animation-1 text-decoration-none text-uppercase" aria-label="linkedin-link" style="color: white;">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="contact-info text-lg-end">
-                                <h5 class="text-white mb-3">Contact Us</h5>
-                                <p class="mb-2"><i class="fas fa-phone-alt me-2"></i> +91 98765 43210</p>
-                                <p class="mb-2"><i class="fas fa-envelope me-2"></i> info@7fdesign.com</p>
-                                <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i> Delhi NCR, India</p>
-                                <div class="social-links mt-3">
-                                    <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
-                                    <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
-                                    <a href="#" class="me-2"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="#" class="me-2"><i class="fab fa-pinterest-p"></i></a>
-                                </div>
+                    </div>
+                    <!-- col-4 -->
+                    <div class="col-lg-4 col-xxl-3">
+                        <div class="address-details">
+                            <h5 class="fw-extra-bold separator">Address India:</h5>
+                            <div class="footer-address">
+                                <p class="fw-semibold mb-0">7F Design,</p>
+                                <p style="color: white;">Sector-76, 121004, Faridabad, Haryana, INDIA </p>
                             </div>
+                            <div class="d-flex flex-column">
+                                <p class="mb-0 d-flex align-items-center gap-2" style="color: white;">Phone: <a href="tel:00000000" class="text-decoration-none link-hover-animation-1" style="color: white;">+91 79824 32663</a></p>
+                                <p class="mb-0 d-flex align-items-center gap-2" style="color: white;">Email: <a href="mailto:info.7fdesign@gmail.com" class="text-decoration-none link-hover-animation-1" style="color: white;">info.7fdesign@gmail.com</a></p>
+                            </div>									
                         </div>
                     </div>
-                    <div class="footer-bottom mt-5 pt-4 border-top border-secondary">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p class="mb-0 text-white-50">&copy; 2023 7F Design. All Rights Reserved.</p>
-                            </div>
-                            <div class="col-md-6 text-md-end">
-                                <p class="mb-0 text-white-50">Designed with <i class="fas fa-heart text-danger"></i> by 7F Design Team</p>
-                            </div>
+                    <!-- col-3 -->
+                    <div class="col-lg-4 col-xxl-3">
+                        <div class="address-details">
+                            <h5 class="fw-extra-bold separator">Quick Links:</h5>
+                            
+                            <div class="d-flex flex-column">
+                                <p class="mb-0 d-flex align-items-center gap-2"><a href="https://7fdesign.com/" class="text-decoration-none link-hover-animation-1" style="color: white;">Home</a></p>
+                                <p class="mb-0 d-flex align-items-center gap-2"> <a href="about-us.html" class="text-decoration-none link-hover-animation-1" style="color: white;">About Us</a></p>
+                                <p class="mb-0 d-flex align-items-center gap-2"> <a href="projects.html" class="text-decoration-none link-hover-animation-1" style="color: white;">Projects</a></p>
+                                <p class="mb-0 d-flex align-items-center gap-2"> <a href="services.html" class="text-decoration-none link-hover-animation-1" style="color: white;">Services</a></p>
+                                <p class="mb-0 d-flex align-items-center gap-2"> <a href="contact.html" class="text-decoration-none link-hover-animation-1" style="color: white;">Contact Us</a></p>
+                            </div>									
                         </div>
                     </div>
+                    <!-- col-3 -->
                 </div>
             </div>
-        </footer>
+            <div class="copyright d-flex flex-column gap-2 flex-lg-row justify-content-lg-between align-items-lg-center text-center text-sm-start">
+                <p class="mb-0" style="color: white;">Made with Love by <a href="https://volvrit.com/" class="text-decoration-none link-hover-animation-1" target="_blank" style="color: white;">Volvrit</a></p>
+                <p style="color: white;" class="mb-0">&copy; <span class="dynamic-year"></span>, 7F Design, All Rights Reserved</p>
+            </div>
+        </div>
+        <!-- container -->
+    </footer>
+    <!--Footer Section ======================-->
+
         <!-- End Footer Section -->
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-    <script src="assets/js/jquery-3.7.0.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/odometer.min.js"></script>
-    <script src="assets/js/viewport.jquery.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/gsap.min.js"></script>
-    <script src="assets/js/ScrollTrigger.min.js"></script>
-    <script src="assets/js/SplitText.min.js"></script>
-    <script src="assets/js/ScrollSmoother.min.js"></script>
-    <script src="assets/js/ScrollToPlugin.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/jquery-3.7.0.min.js" defer></script>
+    <script src="assets/js/bootstrap.bundle.min.js" defer></script>
+    
+    <!-- Read More Toggle Script -->
+    <script>
+        function toggleReadMore(button) {
+            const card = button.closest('.blog-card');
+            const fullContent = card.querySelector('.blog-full-content');
+            const excerpt = card.querySelector('.blog-excerpt');
+            const icon = button.querySelector('i');
+            
+            if (fullContent.style.display === 'none' || !fullContent.style.display) {
+                fullContent.style.display = 'block';
+                excerpt.style.display = 'none';
+                button.innerHTML = 'Read Less <i class="fas fa-arrow-up"></i>';
+            } else {
+                fullContent.style.display = 'none';
+                excerpt.style.display = 'block';
+                button.innerHTML = 'Read More <i class="fas fa-arrow-right"></i>';
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js" defer></script>
+    <script src="assets/js/swiper-bundle.min.js" defer></script>
+    <script src="assets/js/odometer.min.js" defer></script>
+    <script src="assets/js/viewport.jquery.js" defer></script>
+    <script src="assets/js/jquery.magnific-popup.min.js" defer></script>
+    <script src="assets/js/gsap.min.js" defer></script>
+    <script src="assets/js/ScrollTrigger.min.js" defer></script>
+    <script src="assets/js/SplitText.min.js" defer></script>
+    <script src="assets/js/ScrollSmoother.min.js" defer></script>
+    <script src="assets/js/ScrollToPlugin.min.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
     <script>
         // Update dynamic year in footer
         document.querySelector('.dynamic-year').textContent = new Date().getFullYear();
@@ -574,6 +851,24 @@
             });
         });
     </script>
-</body>
+
+    <script src="/register-sw.js" defer></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const preloader = document.querySelector('.header-preloader');
+                if (preloader) {
+                    // Hide preloader when page is fully loaded
+                    window.addEventListener('load', function() {
+                        setTimeout(function() {
+                            preloader.classList.add('hide');
+                            // Remove from DOM after animation
+                            setTimeout(() => preloader.remove(), 500);
+                        }, 500);
+                    });
+                }
+            });
+        </script>
+    </body>
 
 </html>

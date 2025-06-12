@@ -1,0 +1,9 @@
+
+    /* Critical CSS */
+    :root { --primary-color: #253b2f; --text-color: #333; }
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; color: var(--text-color); }
+    h1, h2, h3, h4, h5, h6 { margin-top: 0; line-height: 1.2; }
+    img { max-width: 100%; height: auto; display: block; }
+    .header-preloader { position: fixed; top: 0; left: 0; width: 100%; height: 80px; background: #fff; z-index: 9999; }
+    /* Add more critical styles as needed */
+    
